@@ -22,7 +22,7 @@ const CharacterSelect = ({ setCharacter, playAudio }: CharacterSelectProps) => {
                     option: (styles, { isSelected, isFocused }) => ({
                         ...styles,
                         backgroundColor: isSelected ? "#7fbfff" : isFocused ? "#d1e8ff" : "white",
-                        color: isSelected ? "#7fbfff" : isFocused ? "black" : "black",
+                        color: isSelected ? "white" : isFocused ? "black" : "black",
                     }),
                 }}
                 id="selectbox"

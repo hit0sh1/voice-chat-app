@@ -10,7 +10,7 @@ import { CharacterType, MessageType } from "./types";
 //メインコンポーネント
 const Main = () => {
     const [character, setCharacter] = useState<CharacterType>(Characters[0]);
-    const [loading, setLoding] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(false);
     const [messages, setMessages] = useState<MessageType[]>(TestMessages);
     const questionRef = useRef<HTMLInputElement>(null);
 
@@ -23,7 +23,7 @@ const Main = () => {
                 speaker,
             });
             // base64形式で取得
-            const base64Audio = responseAudio?.data?.reseponse;
+            const base64Audio = responseAudio?.data?.response;
 
             // Bufferに変換
             const byteArray = Buffer.from(base64Audio, "base64");
