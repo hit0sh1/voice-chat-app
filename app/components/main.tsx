@@ -4,14 +4,15 @@ import { ArrowPathIcon } from "@heroicons/react/24/solid";
 import axios from "axios";
 import { useRef, useState } from "react";
 import CharacterSelect from "./character-select";
-import { Characters } from "./config";
+import { Characters, TestMessages } from "./config";
+import Scroll from "./scroll";
 import { CharacterType, MessageType } from "./types";
 
 //メインコンポーネント
 const Main = () => {
     const [character, setCharacter] = useState<CharacterType>(Characters[0]);
     const [loading, setLoading] = useState<boolean>(false);
-    const [messages, setMessages] = useState<MessageType[]>([]);
+    const [messages, setMessages] = useState<MessageType[]>(TestMessages);
     const questionRef = useRef<HTMLInputElement>(null);
 
     //メッセージ設定
@@ -142,6 +143,8 @@ const Main = () => {
                     required
                 />
             </form>
+            {/* {スクロール} */}
+            <Scroll messages={messages} />
         </div>
     );
 };
