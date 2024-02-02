@@ -3,6 +3,7 @@
 import { ArrowPathIcon } from "@heroicons/react/24/solid";
 import axios from "axios";
 import { useRef, useState } from "react";
+import Character from "./character";
 import CharacterSelect from "./character-select";
 import { Characters, TestMessages } from "./config";
 import Scroll from "./scroll";
@@ -145,6 +146,9 @@ const Main = () => {
             </form>
             {/* {スクロール} */}
             <Scroll messages={messages} />
+
+            {/* { イラスト表示} */}
+            <Character character={character} />
         </div>
     );
 };
